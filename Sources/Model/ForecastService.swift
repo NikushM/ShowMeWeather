@@ -11,7 +11,7 @@ class ForecastService: ForecastFetching {
     }
 
     func getForecast(for location: String) async throws -> ForecastResponse {
-        let requestPath = "https://api.openweathermap.org/data/2.5/forecast?q=\(location)&units=metric&appid=eb8cbd50ddb4b078412365011c4654cf"
+        let requestPath = "https://api.openweathermap.org/data/2.5/forecast?q=\(location)&units=metric&appid=\(APIKeys.openWeather)"
         
         guard let url = URL(string: requestPath) else {
             throw ForecastServiceError(reason: "Can't make URL from \(requestPath)")
